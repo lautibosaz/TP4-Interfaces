@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peg Solitaire – Batman vs Superman</title>
+  <link rel="stylesheet" href="EstiloJuego.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <span id="hamburger" class="menu-hamburguesa" role="button" tabindex="0" aria-label="Abrir menú de categorías"
+        aria-controls="menu-categorias" aria-expanded="false">☰</span>
+
+      <a class="titulo-imagen" href="index.html">
+        <img src="images/logo.png" alt="Logo El Rincón del Laucha" class="logo">
+        <span class="titulo">EL RINCON DEL LAUCHA</span>
+      </a>
+
+      <div class="container-busqueda">
+        <div class="busqueda-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Buscar..." />
+        </div>
+      </div>
+
+      <span id="menu-user-btn" class="menuUser-btn" aria-label="Abrir menú de usuario" aria-controls="menu-user"
+        aria-expanded="false"><i class="fa-solid fa-user"></i></span>
+    </div>
+  </header>
+
+  <!-- Menú usuario -->
+  <nav id="menu-user" class="user-menu" aria-hidden="true">
+    <div class="user-menu-header">
+      <strong>Cuenta</strong>
+      <button class="close-user-menu" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <div class="user-menu-content">
+      <a class="user-link" href="#">Mis datos</a>
+      <a class="user-link" href="#">Configuración</a>
+      <a class="user-link" href="#">Soporte</a>
+      <button class="user-link logout" id="logoutBtn">Cerrar sesión</button>
+    </div>
+  </nav>
+  <div id="menu-user-backdrop" class="menu-backdrop user-backdrop" aria-hidden="true"></div>
+
+  <!-- Menú categorías -->
+  <nav id="menu-categorias" class="side-menu" aria-hidden="true">
+    <div class="side-menu-header">
+      <strong>Categorías</strong>
+      <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+    </div>
+
+    <div class="side-menu-content">
+      <a class="cat-btn" href="#"><i class="fa-solid fa-bolt"></i> Acción</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-hat-wizard"></i> Aventura</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-dice-d20"></i> RPG</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-bullseye"></i> Shooter</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-futbol"></i> Deportes</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-chess-knight"></i> Estrategia</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-flag-checkered"></i> Carreras</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-ghost"></i> Terror</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-gamepad"></i> Plataformas</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-people-group"></i> Multijugador</a>
+      <a class="cat-btn" href="#"><i class="fa-solid fa-star"></i> Indie</a>
+    </div>
+  </nav>
+  <div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
+
+  <div class="page">
+    <div class="breadcrumb">
+      <h1>Peg Solitaire</h1>
+      <a href="index.html">Home</a> >>
+      <a href="#">Estrategia</a> >>
+      <a href="#">Solitario</a> >>
+      <span>Peg Solitaire: "Batman Vs Superman"</span>
+    </div>
+
+    <div class="gameSection">
+      <!-- Contenedor del juego -->
+    <section id="peg-game" style="display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px 0;">
+      <div id="peg-root"></div>
+    </section>
+    </div>
+
+    <!-- BARRA DEL JUEGO: acá están tus botones -->
+    <div class="gameBar">
+  <div class="jugar">
+    <button class="btnJugar">JUGAR</button>
+    <button id="peg-restart" class="btnJugar">Reiniciar</button>
+
+    <!-- NUEVO: selector de tema -->
+    <label for="peg-theme" style="color:#fff;margin-left:12px;">Fichas:</label>
+    <select id="peg-theme" class="selectTema">
+      <option value="mixed" selected>Batman vs Superman (50/50)</option>
+      <option value="bat">Solo Batman</option>
+      <option value="sup">Solo Superman</option>
+    </select>
+  </div>
+
+  <!-- ... (resto de .compartir) -->
+</div>
+
+
+   
+
+    <div class="pegSolitaire">
+      <div class="descripcion">
+        <h2>Peg Solitaire: Batman vs Superman</h2>
+        <p>
+          En esta edición temática, las fichas son Batman y Superman. Arrastrá para saltar una ficha sobre otra y
+          eliminarlas. El objetivo es terminar con una sola ficha en el tablero antes de que se acabe el tiempo.
+        </p>
+      </div>
+
+      <div class="instrucciones">
+        <h2 style="text-align: center;">CÓMO JUGAR</h2>
+        <ul>
+          <li>
+            <span>Mover una ficha</span>
+            <div class="iconGroup">
+              <img src="img/Left Click.png" alt="Click izquierdo">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reseñas">
+      <h2>Dejá tu reseña del juego</h2>
+
+      <div class="formularioReseña">
+        <textarea placeholder="Escribí tu reseña aquí..."></textarea>
+        <button class="btnPublicar">PUBLICAR</button>
+      </div>
+
+      <div class="listaReseñas">
+        <div class="reseña">
+          <div class="usuario">
+            <img src="img/ImagenUser.png" alt="Usuario" class="iconoUsuario">
+            <h3>Facundo Cazeaux</h3>
+          </div>
+          <div class="contenidoReseña">
+            <p>Me gustó que tenga instrucciones claras, aprendí rápido.</p>
+            <img src="img/like.png" alt="Like" class="iconoLike">
+          </div>
+        </div>
+        <!-- (otras reseñas omitidas para brevedad) -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <section id="footer-logo">
+          <div id="footer-logo-container">
+            <a class="titulo-imagen" href="/">
+              <img src="img/logo.png" alt="Logo El Rincón del Laucha" class="logo">
+              <span class="titulo">EL RINCON DEL LAUCHA</span>
+            </a>
+          </div>
+          <div id="footer-redes">
+            <a href="#"><i class="fa-brands fa-youtube" style="color:#ffff;"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook" style="color:#ffff;"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" style="color:#ffff;"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter" style="color:#ffff;"></i></a>
+          </div>
+          <div id="footer-informacion">
+            <section id="columna-1">
+              <a href="">Política de Privacidad</a>
+              <a href="">Términos de uso</a>
+              <a href="">Información Legal</a>
+              <a href="">Configuración de Cookies</a>
+            </section>
+            <section id="columna-2">
+              <a href="">Contacto</a>
+              <a href="">Ayuda</a>
+            </section>
+            <section id="columna-3">
+              <a href="">Prensa</a>
+              <a href="">Inversiones</a>
+            </section>
+            <section id="columna-4">
+              <a href="">Empresa</a>
+              <a href="">Empleo</a>
+              <a href="">Ubicaciones</a>
+              <a href="">Más que Juegos</a>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section id="footer-idioma-container">
+          <div id="footer-idioma">
+            <label for="idioma-select"><i class="fa-solid fa-earth-americas"></i></label>
+            <select id="idioma-select" name="idioma">
+              <option value="es">Español</option>
+              <option value="en">Inglés</option>
+              <option value="fr">Francés</option>
+              <option value="de">Alemán</option>
+              <option value="it">Italiano</option>
+              <option value="pt">Portugués</option>
+            </select>
+          </div>
+
+          <div id="footer-derechos">
+            <span>© 2025 El Rincón del Laucha. Todos los derechos reservados.</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="like.js"></script>
+  <script src="Juegopeg.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      new JuegoPegSolitaire('#peg-root'); // instancia el juego usando tus botones
+    });
+  </script>
+</body>
+</html>
